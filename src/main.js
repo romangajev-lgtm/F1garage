@@ -182,7 +182,7 @@ app.innerHTML = `
         data-i18n-attr="aria-label:a11y.brandHome"
       >
         <img
-          src="${assetPath("/F1garage/images/logo-white.png")}"
+          src="${assetPath("images/garage/logo/logo-white.png")}"
           alt="${t("a11y.logoAlt")}"
           data-i18n-attr="alt:a11y.logoAlt"
           width="2306"
@@ -226,10 +226,10 @@ app.innerHTML = `
   <main id="main">
     <section class="hero" id="home" aria-labelledby="hero-title">
       <picture class="hero__media">
-        <source media="(max-width: 760px)" srcset="${assetPath("/F1garage/images/generated/hero-premium-auto-service-mobile.webp")}" type="image/webp" />
+        <source media="(max-width: 760px)" srcset="${assetPath("images/generated/hero-premium-auto-service-mobile.webp")}" type="image/webp" />
         <img
           class="hero__image"
-          src="${assetPath("/F1garage/images/generated/hero-premium-auto-service.webp")}"
+          src="${assetPath("images/generated/hero-premium-auto-service.webp")}"
           alt="${t("hero.imageAlt")}"
           data-i18n-attr="alt:hero.imageAlt"
           width="1672"
@@ -245,7 +245,7 @@ app.innerHTML = `
           <span>GARAGE</span>
           <img
             class="hero-logo-mark"
-            src="${assetPath("/F1garage/images/Auto-batumi-F1-2.png")}"
+            src="${assetPath("images/garage/logo/auto-batumi-f1-2.png")}"
             alt="${t("hero.titleMarkAlt")}"
             data-i18n-attr="alt:hero.titleMarkAlt"
             width="3000"
@@ -270,7 +270,7 @@ app.innerHTML = `
     <section class="manifesto angled-section" id="about" aria-labelledby="about-title">
       <img
         class="manifesto__wheel wheel-reveal"
-        src="${assetPath("/F1garage/images/manifesto-wheel.webp")}"
+        src="${assetPath("images/manifesto-wheel.webp")}"
         alt=""
         aria-hidden="true"
         width="1200"
@@ -309,7 +309,7 @@ app.innerHTML = `
     <section class="prices angled-section angled-section--red" id="prices" aria-labelledby="prices-title">
       <img
         class="prices__gloves"
-        src="${assetPath("/F1garage/images/prices-gloves-cutout.webp")}"
+        src="${assetPath("images/prices-gloves-cutout.webp")}"
         alt=""
         aria-hidden="true"
         width="1254"
@@ -551,7 +551,7 @@ app.innerHTML = `
         data-i18n-attr="aria-label:a11y.brandTop"
       >
         <img
-          src="${assetPath("/F1garage/images/logo-white.png")}"
+          src="${assetPath("images/garage/logo/logo-white.png")}"
           alt="${t("a11y.logoAlt")}"
           data-i18n-attr="alt:a11y.logoAlt"
           width="2306"
