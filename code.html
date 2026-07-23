@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GARAGE F1 | High-Octane Performance Service</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb4a8",
+                        "on-surface-variant": "#e9bcb5",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary": "#680200",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed-dim": "#ffb5a0",
+                        "primary-fixed": "#ffdad4",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#ff5625",
+                        "on-tertiary-container": "#f8f5f4",
+                        "on-secondary": "#601400",
+                        "surface-bright": "#393939",
+                        "primary": "#ffb4a8",
+                        "on-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "on-tertiary-fixed": "#1b1b1c",
+                        "on-tertiary": "#303030",
+                        "on-secondary-fixed": "#3b0900",
+                        "primary-container": "#e10600",
+                        "on-primary-fixed-variant": "#930300",
+                        "secondary-fixed": "#ffdbd1",
+                        "on-secondary-fixed-variant": "#872000",
+                        "secondary": "#ffb5a0",
+                        "surface-variant": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "on-error": "#690005",
+                        "surface-tint": "#ffb4a8",
+                        "background": "#131313",
+                        "inverse-primary": "#c00500",
+                        "on-primary-container": "#fff2f0",
+                        "tertiary": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-dim": "#131313",
+                        "outline": "#af8781",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "tertiary-container": "#717070",
+                        "outline-variant": "#5e3f3a",
+                        "on-secondary-container": "#541100",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "on-primary-fixed": "#410100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "2px",
+                        "lg": "4px",
+                        "xl": "8px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "max-width": "1440px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "900"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["52px", {"lineHeight": "1.1", "fontWeight": "900"}],
+                        "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "display-lg": ["82px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .skew-section {
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+            margin-top: -5vh;
+            margin-bottom: -5vh;
+        }
+        .italic-force { font-style: italic !important; }
+        .glass-card {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .btn-start {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 0 0 0 rgba(225, 6, 0, 0);
+        }
+        .btn-start:hover {
+            transform: scale(1.05) skewX(-6deg);
+            box-shadow: 0 0 30px rgba(225, 6, 0, 0.6);
+        }
+        .btn-start::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+        .btn-start:hover::after {
+            left: 120%;
+        }
+        .motion-blur-hover {
+            transition: filter 0.3s ease;
+        }
+        .motion-blur-hover:hover {
+            filter: blur(1px) contrast(1.2);
+        }
+        .film-strip {
+            border-top: 20px solid #1a1a1a;
+            border-bottom: 20px solid #1a1a1a;
+            background-image: radial-gradient(#333 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-2xl border-b-2 border-primary-container/20">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-24 w-full max-w-max-width mx-auto">
+<div class="font-display-lg text-headline-md italic-force font-black text-primary italic tracking-tighter scale-y-110">GARAGE F1</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-on-surface/60 text-label-sm uppercase tracking-widest hover:text-primary transition-all duration-200 hover:italic" href="#history">History</a>
+<a class="text-on-surface/60 text-label-sm uppercase tracking-widest hover:text-primary transition-all duration-200 hover:italic" href="#services">Services</a>
+<a class="text-on-surface/60 text-label-sm uppercase tracking-widest hover:text-primary transition-all duration-200 hover:italic" href="#work">Work</a>
+<a class="text-on-surface/60 text-label-sm uppercase tracking-widest hover:text-primary transition-all duration-200 hover:italic" href="#contacts">Contacts</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary-container text-white px-8 py-3 font-black uppercase tracking-widest btn-start italic-force">Start Service</button>
+</div>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[95vh] flex items-center justify-start overflow-hidden">
+<div class="absolute inset-0 z-0 scale-110">
+<div class="w-full h-full bg-cover bg-center brightness-75 contrast-125" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAa2bqHDjmVozWpaWSoAPzCHEfv9f04LV51YDI-K1BAh82RSY0mfHZGPOwwUtYNhP0ZXjEj_CouS0Q4v_VFVfdQ80yUVJipN5e_xz4LhlbkgSaCVvwI31mf5Hxvo8xbNeCfO4k8jXRRw_AlWEYjcHRfLSCxVkt-YQo33cIUjmHjl5zhNj-Ua6fIbnfL0nAlZSd-IWRiyv3vhm4jp-6IRIHDHFMRMAbmOIhOQ_xQ8wHNRTFF_eVpuXz-fwjR8HMfo7KoZYF5LdpO6ao')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+<div class="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-6xl">
+<div class="flex items-center gap-6 mb-8">
+<div class="w-20 h-1 bg-primary-container"></div>
+<span class="text-primary font-black text-label-sm uppercase tracking-[0.4em] italic-force">Race-Grade Precision</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-white mb-10 italic-force leading-[0.9]">
+                АВТОСЕРВИС,<br/>СОЗДАННЫЙ <span class="text-primary-container bg-white px-4 inline-block -rotate-1 italic-force">ЧЕЛОВЕКОМ</span><br/>ИЗ АВТОСПОРТА
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl leading-tight border-l-4 border-primary-container pl-8">
+                Мы переносим стандарты пит-стопа в гражданский сервис. Точность до миллиметра. Скорость без потери качества. Ваша победа над дорогами.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-primary-container text-white px-12 py-6 font-black uppercase tracking-[0.2em] text-label-sm btn-start italic-force">
+                    Записаться на старт
+                </button>
+<button class="border-2 border-white text-white px-12 py-6 font-black uppercase tracking-[0.2em] text-label-sm hover:bg-white hover:text-black transition-all italic-force">
+                    Наша история
+                </button>
+</div>
+</div>
+<div class="absolute bottom-20 right-0 p-8 bg-primary-container text-white -rotate-90 origin-right hidden lg:block font-black tracking-[0.5em] uppercase text-xs">
+            PADDOCK ACCESS GRANTED
+        </div>
+</section>
+<!-- High Impact Manifesto -->
+<section class="py-40 bg-white text-black skew-section relative z-20">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-7">
+<h2 class="font-display-lg text-display-lg italic-force leading-none mb-12">"СЕКУНДЫ РЕШАЮТ ВСЁ."</h2>
+<p class="text-headline-md font-black uppercase tracking-tighter mb-8 italic-force">В автоспорте — это подиум. В жизни — это ваша уверенность за рулем.</p>
+</div>
+<div class="lg:col-span-5 grid grid-cols-1 gap-4">
+<div class="bg-black text-white p-8 group hover:bg-primary-container transition-all cursor-crosshair">
+<div class="flex justify-between items-center mb-4">
+<span class="text-4xl font-black italic-force">01</span>
+<span class="material-symbols-outlined text-4xl">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-md italic-force uppercase mb-2">ТОЧНОСТЬ</h3>
+<p class="text-sm opacity-70">Нулевые допуски. Только заводские регламенты.</p>
+</div>
+<div class="bg-black text-white p-8 group hover:bg-primary-container transition-all cursor-crosshair">
+<div class="flex justify-between items-center mb-4">
+<span class="text-4xl font-black italic-force">02</span>
+<span class="material-symbols-outlined text-4xl">speed</span>
+</div>
+<h3 class="font-headline-md italic-force uppercase mb-2">СКОРОСТЬ</h3>
+<p class="text-sm opacity-70">Оптимизированные процессы как на пит-лейне.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- History: Documentary Strip -->
+<section class="py-48 bg-black film-strip overflow-hidden" id="history">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-display-lg text-headline-lg italic-force uppercase mb-32 text-center text-primary-container scale-110">
+                DRIVEN BY PASSION
+            </h2>
+<div class="space-y-64">
+<!-- Film Frame 1 -->
+<div class="flex flex-col lg:flex-row gap-12 items-center group">
+<div class="lg:w-2/3 relative">
+<div class="absolute -top-10 -left-10 text-[180px] font-black text-white/5 select-none pointer-events-none italic-force">2010</div>
+<div class="aspect-[21/9] overflow-hidden border-8 border-white/10 motion-blur-hover grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Origins" class="w-full h-full object-cover scale-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiL7TgpEo1qLAUTtxcG9P5iyn6gOlp9AFculupvBl30bJ8BwBLRmtqe6IWCXNibz4NmAoq2ogVewkN_yfv826A2Rzc6H6t3NjT6xXFHyJiATmaHx4U1dRtCuxzpFLpaiAiA8lHq69eTO5k_Lu0dKWYEED0E0Mm3-PUwjaU7Zqy1jpMyaRQAyYlZkp55VG7LuBBO1AqrPRHuVj-f0sPmsCd_8Nw4QHLhSZpZxl1tteRoigl5aZ8HL3U_l3sQMgEofWh0v4fWuWP6e0"/>
+</div>
+</div>
+<div class="lg:w-1/3">
+<h4 class="font-display-lg text-headline-md italic-force text-primary-container mb-4">THE SPARK</h4>
+<p class="text-body-lg text-on-surface-variant font-medium">Первые разобранные двигатели. Поиск идеального звука и безупречной работы механизмов.</p>
+</div>
+</div>
+<!-- Film Frame 2 -->
+<div class="flex flex-col lg:flex-row-reverse gap-12 items-center group">
+<div class="lg:w-2/3 relative">
+<div class="absolute -top-10 -right-10 text-[180px] font-black text-white/5 select-none pointer-events-none italic-force text-right">2014</div>
+<div class="aspect-[21/9] overflow-hidden border-8 border-white/10 motion-blur-hover grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Racing" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPitr0kloNbfVb5AWP9nKL-JFcOoOTQpCnTh4EOEuzPPuh69VBgFWnrS8OPf9qfn3HOt15pL6LF2z4_FRGeD3xc8Aj9pmDUeZviYIcpe8osCoi-pGXG5k9vFc4A4gN0FCdi2o0bwXsvdsB3560MV4GavdXoUF-6uCkzoabTie_gLqPaNVVKa3A__Tn60EEFJPbCLTFVZgMu3D6t-DMMIPcU8vZxS9KXui00gdR6-Tb00qzonbAy6DdchaFVt-4N_ZgvbjmChtW7_s"/>
+</div>
+</div>
+<div class="lg:w-1/3 text-right">
+<h4 class="font-display-lg text-headline-md italic-force text-primary-container mb-4">THE TRACK</h4>
+<p class="text-body-lg text-on-surface-variant font-medium">Экстремальные нагрузки. Здесь мы научились, что значит "надежность" на самом деле.</p>
+</div>
+</div>
+<!-- Film Frame 3 -->
+<div class="flex flex-col lg:flex-row gap-12 items-center group">
+<div class="lg:w-2/3 relative">
+<div class="absolute -top-10 -left-10 text-[180px] font-black text-white/5 select-none pointer-events-none italic-force">TODAY</div>
+<div class="aspect-[21/9] overflow-hidden border-8 border-primary-container motion-blur-hover">
+<img alt="Garage F1" class="w-full h-full object-cover brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARl0eD1NkV7Deaok_yQNYqHTFmfg4Jq-rtNGgxLS5y0pe2m-Y8zQZ2KImrDV7qjF17w6ImJgPdraCNv7Y_Rjptbwc32TiE9QtytQBlC6iyA53-E7Di8oBetkAmMCQmQfPi8Y_SqmkB2F0Z6oTWcqELX59ao5cauAE7eb9gj9XVcMApvakUosj2NPCKVbU5YUu05fyN9cAXHbSdRgwe7R8LxjHaZzRfWJS3RF1iPN5CwEUfbPaahdQCf3qZMXSGuDvmpArn6MAUtB0"/>
+</div>
+</div>
+<div class="lg:w-1/3">
+<h4 class="font-display-lg text-headline-md italic-force text-primary-container mb-4">GARAGE F1</h4>
+<p class="text-body-lg text-on-surface-variant font-medium">Ваш автомобиль получает сервис уровня Формулы 1. Без компромиссов.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services: Dynamic Grid -->
+<section class="py-40 bg-surface-container-lowest skew-section" id="services">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row justify-between items-end mb-32">
+<h2 class="font-display-lg text-display-lg italic-force uppercase text-white"><span class="text-primary-container">CORE</span> TECH</h2>
+<div class="bg-primary-container text-white p-8 -rotate-2">
+<p class="text-label-sm uppercase font-black">Labor Rate</p>
+<p class="text-5xl font-black italic-force">30 ₾ <span class="text-lg">/ HR</span></p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="relative group aspect-[3/4] overflow-hidden">
+<img alt="DVS" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwfKBniciLvb5qkyuSlnGiPS1HJLEkbKT5hs0W3BHrNoOryElvIvZf7CJZYlw-iAnwnJcks2hcI0fR8T2BBYS8MmmCwGq_CeYzMAMnSjs0OF_Gx8ewCVjXq-_XAZcc_37OXGLYzMHLE-XouejJLmjZK_VdZnrVGWKWrr-S1-pSmZFY5D4cfdyu0Q1GFn-REjoVtuKvAlnJ0QMJ6ZJusuxXfCG3LB0hJ-De1UumD7OVZivBr1JE44NJxeLWKEBC9_8JdcyLNcmdvCo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container to-transparent opacity-0 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full transform translate-y-10 group-hover:translate-y-0 transition-transform">
+<h3 class="text-4xl font-black italic-force uppercase text-white mb-4">ENGINE</h3>
+<p class="text-white/80 mb-6 font-medium">Полный перебор и тюнинг силовых агрегатов.</p>
+<p class="text-white text-3xl font-black italic-force">от 700 ₾</p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="relative group aspect-[3/4] overflow-hidden">
+<img alt="Suspension" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRI2vR3ObjqEXsEjXexzNkOg4pt69kShLlEjg4b3J79TjmI4rKtcjoUTSeyIjZUGilLbUxRJ3kgs0XapxZDSmubI5983jcEH5jMVwTW0xC3k5GfDEsUdJFOD4pWpxSQhC4y17HYO_5lY0OI9iNfHVxWLVzrhpNhk-jCwj_U2cgHagxoq2kb9DWGz-oofahwq99IN43aS8rccOPF8e2dbKxCkhAiIe1UnCPsJU7MJtpA24GeW4WWb2Wdvd071SO17tAqMk_v_ikD_Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container to-transparent opacity-0 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full transform translate-y-10 group-hover:translate-y-0 transition-transform">
+<h3 class="text-4xl font-black italic-force uppercase text-white mb-4">CHASSIS</h3>
+<p class="text-white/80 mb-6 font-medium">Настройка подвески для идеального зацепа.</p>
+<p class="text-white text-3xl font-black italic-force">от 60 ₾</p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="relative group aspect-[3/4] overflow-hidden">
+<img alt="Transmission" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Z0I33iwX7J569xZwV40PL9Cdd9GG4K3uVzA85XjLXMHq53AzOzpCXastMKQqebOccwsfL5CDa1HANJJt6Ti3Ijz7cwJVKl--2Duv45JldEOWwZTcG4RgtVcgFwaXBdQ8Oj0UcGBrWDrhF20SLepl2P-lWsuuVZ3vvEItaAkjnWqj8rtNHtjY9lBRbOJxMOOfRua5-b5M7cR4_UO4au3Yg3IkB8rCwIc7iOmm6inrcTmeQIfjckG8fERJ582RBII67tN11KX0xiI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container to-transparent opacity-0 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full transform translate-y-10 group-hover:translate-y-0 transition-transform">
+<h3 class="text-4xl font-black italic-force uppercase text-white mb-4">GEARS</h3>
+<p class="text-white/80 mb-6 font-medium">VAG &amp; French Groups. DSG specialists.</p>
+<p class="text-white text-3xl font-black italic-force">300-600 ₾</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Work Archive: High Contrast -->
+<section class="py-48 bg-black" id="work">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-baseline mb-32 border-b-8 border-white pb-8">
+<h2 class="font-display-lg text-display-lg italic-force uppercase text-white">RECORDS</h2>
+<a class="text-primary-container font-black text-label-sm uppercase italic-force tracking-widest flex items-center gap-4 group" href="#">
+                    OPEN LOGS
+                    <span class="material-symbols-outlined group-hover:translate-x-4 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div class="group">
+<div class="relative overflow-hidden mb-12 aspect-[16/9] border-4 border-white/10 group-hover:border-primary-container transition-colors">
+<img alt="Subaru" class="w-full h-full object-cover motion-blur-hover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2EdfmXuvri6JiitQndxoTm3I04I6ACjmyuqUcsDeQmsJGAHjhl0lF5-6yhadP6Hf-X0MAYBBbYyh9KTM7ejl7SmsM4C9fUJxUUiR7yaA-dLO_lm2EUXZBUg2uMeGVPmEC-aPj6-csP5Gw4lRwNR6SoPrHzORFH2IKIGv8I6eIOWUB1hVigo4LYdmmQh9AV_rDp-tBWi1Vd9WQ7FmMVBlcS9MBipMKGgpKVvpgjPgOQp5qB7o3izfvDWCQu4VznCpGoi5JS-WjQVE"/>
+<div class="absolute top-0 right-0 bg-primary-container text-white p-4 font-black italic-force">CASE #042</div>
+</div>
+<h4 class="text-4xl font-black italic-force uppercase mb-4">SUBARU FORESTER XT</h4>
+<p class="text-on-surface-variant text-lg">Engine Overhaul. Zero tolerance assembly.</p>
+</div>
+<div class="group">
+<div class="relative overflow-hidden mb-12 aspect-[16/9] border-4 border-white/10 group-hover:border-primary-container transition-colors">
+<img alt="BMW" class="w-full h-full object-cover motion-blur-hover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7QEUwoKW8y2ZYky2t_qxcAjk_MBgNMUT7FhtgZqlUlJu3iIBvMeq-_5Gy97jhWxUzL0EUtI9kX-RZYqdZFgnY6w1c4idqo_J9jKnCiYutxQEAOX1_azczZMjznQq-qC9rPm9ATQCl3g9k9oUffohM9VjxEMERksXez-jBqpfGZm6RBLZui2ogGiYQ0m7F7lp-V5h1Mf2AE7F_6JwWUfpbrpL14eJ_BykYFqKdwB9Eg_qdVD9Ibbe6CAc43ORR_LRPDaJ8P8xZmRA"/>
+<div class="absolute top-0 right-0 bg-primary-container text-white p-4 font-black italic-force">CASE #038</div>
+</div>
+<h4 class="text-4xl font-black italic-force uppercase mb-4">BMW M4 F82</h4>
+<p class="text-on-surface-variant text-lg">Advanced Electronics &amp; Software Adaptation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contacts: Asymmetrical Form -->
+<section class="bg-primary-container text-white py-48" id="contacts">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div class="space-y-16">
+<h2 class="font-display-lg text-display-lg italic-force uppercase leading-none">JOIN THE<br/><span class="text-black">PADDOCK</span></h2>
+<div class="space-y-8">
+<div class="flex items-center gap-8 group">
+<span class="material-symbols-outlined text-6xl text-black">location_on</span>
+<div class="border-l-4 border-black pl-8">
+<p class="text-sm font-black uppercase opacity-60">HQ Location</p>
+<p class="text-2xl font-black italic-force uppercase">BATUMI, INDUSTRIAL 14A</p>
+</div>
+</div>
+<div class="flex items-center gap-8 group">
+<span class="material-symbols-outlined text-6xl text-black">call</span>
+<div class="border-l-4 border-black pl-8">
+<p class="text-sm font-black uppercase opacity-60">Emergency Line</p>
+<p class="text-2xl font-black italic-force uppercase">+995 555 12 34 56</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-black p-12 -rotate-1 shadow-[40px_40px_0_0_rgba(0,0,0,0.2)]">
+<h3 class="text-4xl font-black italic-force uppercase mb-12">START SERVICE SEQUENCE</h3>
+<form class="space-y-8">
+<div class="grid grid-cols-2 gap-8">
+<input class="w-full bg-transparent border-b-2 border-white/20 text-white px-0 py-4 focus:border-primary-container focus:ring-0 transition-all font-bold placeholder:text-white/30" placeholder="PILOT NAME" type="text"/>
+<input class="w-full bg-transparent border-b-2 border-white/20 text-white px-0 py-4 focus:border-primary-container focus:ring-0 transition-all font-bold placeholder:text-white/30" placeholder="PHONE" type="tel"/>
+</div>
+<input class="w-full bg-transparent border-b-2 border-white/20 text-white px-0 py-4 focus:border-primary-container focus:ring-0 transition-all font-bold placeholder:text-white/30" placeholder="VEHICLE MODEL" type="text"/>
+<select class="w-full bg-black border-b-2 border-white/20 text-white px-0 py-4 focus:border-primary-container focus:ring-0 transition-all font-bold">
+<option>SYSTEM: ENGINE</option>
+<option>SYSTEM: TRANSMISSION</option>
+<option>SYSTEM: CHASSIS</option>
+<option>SYSTEM: ELECTRONICS</option>
+</select>
+<button class="w-full bg-primary-container text-white py-8 font-black uppercase tracking-[0.4em] btn-start italic-force text-xl">
+                        IGNITION
+                    </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-black py-24 border-t-8 border-white">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="text-center md:text-left">
+<div class="font-display-lg text-display-lg italic-force font-black text-white italic tracking-tighter mb-4">GARAGE F1</div>
+<p class="text-white/40 font-bold uppercase tracking-widest text-xs">RACE GENETICS. DAILY RELIABILITY.</p>
+</div>
+<div class="flex gap-12">
+<a class="text-white font-black italic-force hover:text-primary-container transition-colors" href="#">INSTAGRAM</a>
+<a class="text-white font-black italic-force hover:text-primary-container transition-colors" href="#">TIKTOK</a>
+<a class="text-white font-black italic-force hover:text-primary-container transition-colors" href="#">TELEGRAM</a>
+</div>
+</div>
+<div class="mt-24 pt-8 border-t border-white/10 flex justify-between items-center text-[10px] font-black text-white/30 uppercase tracking-[0.5em]">
+<span>© 2024 GARAGE F1 ACADEMY</span>
+<span>DATA LOGS ENCRYPTED</span>
+</div>
+</div>
+</footer>
+<!-- Bottom Nav for Mobile -->
+<nav class="flex justify-around items-center px-margin-mobile py-6 md:hidden fixed bottom-0 w-full z-50 bg-black/95 backdrop-blur-xl border-t-4 border-primary-container">
+<a class="flex flex-col items-center justify-center text-white p-2" href="tel:+995555123456">
+<span class="material-symbols-outlined">call</span>
+</a>
+<a class="bg-primary-container text-white rounded-none px-12 py-3 font-black italic-force" href="#contacts">
+        START
+    </a>
+<a class="flex flex-col items-center justify-center text-white p-2" href="#">
+<span class="material-symbols-outlined">map</span>
+</a>
+</nav>
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Reveal animation
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-20');
+            }
+        });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('section > div').forEach(el => {
+        el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-20');
+        revealObserver.observe(el);
+    });
+</script>
+</body></html>
